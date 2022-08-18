@@ -1,4 +1,4 @@
-﻿
+
 namespace SortLinkedList
 {
     internal class Node
@@ -48,7 +48,7 @@ namespace SortLinkedList
             }
         }
 
-        public void SortLinkedList()
+        public void SortLinkedList(bool IsAscending)
         {
             if (!IsNull())
             {
@@ -58,11 +58,23 @@ namespace SortLinkedList
                 {
                     for (Node j = i.next; j != null; j = j.next)
                     {
-                        if (i.value < j.value)
+                        if (IsAscending)
                         {
-                            var temp = j.value;
-                            j.value = i.value;
-                            i.value = temp;
+                            if (i.value > j.value)
+                            {
+                                var temp = j.value;
+                                j.value = i.value;
+                                i.value = temp;
+                            }
+                        }
+                        else
+                        {
+                            if (i.value < j.value)
+                            {
+                                var temp = j.value;
+                                j.value = i.value;
+                                i.value = temp;
+                            }
                         }
                     }
                 }
