@@ -1,7 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
 using SortLinkedList;
 
-Console.WriteLine("Hello, World!");
 Operation x = new Operation();
 
 x.Enqueue(1);
